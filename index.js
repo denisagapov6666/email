@@ -37,5 +37,12 @@ app.post('/text-mail',async (req,res)=>{
   res.send(requestId);
 
 })
+const cron = require('node-cron');
+
+// Define your cron job schedule
+cron.schedule('*/1 * * * *', () => {
+  console.log('Running a task every 5 minutes');
+  // Your task goes here
+});
 
 app.listen(port,()=>console.log(`server is running ${port}`));
